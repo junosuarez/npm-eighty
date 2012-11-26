@@ -6,7 +6,7 @@ var eighty = function (opt) {
     hrchar: '—',
     quotechar: '▎',
     width: 80,
-    wordDelimiter: ' '
+    wordDelimiter: /[ \t]+/
   };
 };
 
@@ -58,14 +58,22 @@ eighty.prototype.wordWrap = function (text, width) {
   var words = text.split(this.opts.wordDelimiter);
   var line = '';
   while (words.length > 0) {
-    var word = words.shift();
-    if ((line.length + 1 + word.length) < width) {
-      line = (line.length > 0 ? line + ' ' : line) + word;
-    } else {
-      lines.push(line);
-      line = word;
+    var parts = words.shift().split('\n');
+    for (var i = 0, len = parts.length; i < len; i++) {
+      var word = parts[i];
+      if (word === '') {
+        lines.push(line);
+        lines.push(word);
+        line = word;
+      } else if ((line.length + 1 + word.length) < width) {
+        line = (line.length > 0 ? line + ' ' : line) + word;
+      } else {
+        lines.push(line);
+        line = word;
+      }
     }
   }
+  lines.push(line);
   return lines;
 };
 
