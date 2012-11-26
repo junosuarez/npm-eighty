@@ -1,12 +1,12 @@
 {
   "name": "eighty",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "utility for working with text in a fixed width buffer (like a console)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
+  "repository": "https://github.com/jden/npm-eighty",
   "keywords": [
     "console",
     "text",
