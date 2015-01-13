@@ -1,6 +1,6 @@
 {
   "name": "eighty",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "utility for working with text in a fixed width buffer (like a console)",
   "main": "index.js",
   "scripts": {
