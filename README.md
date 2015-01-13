@@ -10,7 +10,7 @@ You probably shouldn't quite yet. YMMV.
 
     var eighty = require('eighty');
 
-    eighty = eighty.configure({ width: 40 });
+    eighty.configure({ width: 40 });
 
     eighty.wordWrap('ah, distinctly I remember it was in the bleak December and each seperate dying ember wrought its ghost upon the floor');
 

@@ -2,11 +2,13 @@ var eighty = function (opt) {
   if (!(this instanceof eighty)) {
     return new eighty(opt);
   }
+  opt = typeof opt === 'object' && opt !== null ? opt : {};
+
   this.opts = {
-    hrchar: '—',
-    quotechar: '▎',
-    width: 80,
-    wordDelimiter: /[ \t]+/
+    hrchar: opt.hrchar || '—',
+    quotechar: opt.quotechar || '| ',
+    width: opt.width || 80,
+    wordDelimiter: opt.wordDelimiter|| /[ \t]+/
   };
 };
 
